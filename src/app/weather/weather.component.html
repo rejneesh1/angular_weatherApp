@@ -1,0 +1,39 @@
+<mat-card>
+        <h1 class="text-center text-info font-weight-bold">WeatherApp</h1>
+</mat-card>
+
+<div class="text-center">
+    <form class="mt-3">
+        <mat-form-field>
+            <input  matInput placeholder="City" value="" autocomplete="off" color="blue"  [(ngModel)]="city" name="city">
+        </mat-form-field>
+        <button class="ml-sm-3" mat-mini-fab color="warn" (click)="weatherResult()">Go</button>
+    </form>
+</div>
+
+<div class="result" *ngIf="temperature">
+    <mat-card>
+        
+        <mat-card-header>
+            <mat-card-title>{{cityName}}</mat-card-title>
+            <mat-card-subtitle>{{country}}</mat-card-subtitle>
+        </mat-card-header>
+
+        <img *ngIf="icon" mat-card-image src='http://openweathermap.org/img/w/{{icon}}.png' alt="img for weather condition">
+        
+        <mat-card-content>
+            <h5 class="text-uppercase text-info"> {{description}}  </h5>
+            <h2 *ngIf="selectedValue=='metric'"> {{temperature}} &#8451;</h2>
+            <h2 *ngIf="selectedValue=='imperial'"> {{temperature}} &#8457;</h2>
+        </mat-card-content>
+
+        <div *ngIf="city.toUpperCase()==cityName.toUpperCase()">
+            <mat-select placeholder="Change Unit" [(ngModel)]="selectedValue" name="unit" (selectionChange)=weatherResult()>
+                <mat-option value="metric">Celsius</mat-option>
+                <mat-option value="imperial">Fahrenheit</mat-option>
+            </mat-select>
+        </div>
+    </mat-card>
+</div>
+
+

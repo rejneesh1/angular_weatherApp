@@ -1,0 +1,16 @@
+
+.result{
+    width:40%;
+    margin:auto;
+    text-align: center
+}
+.result .mat-card-image {
+    width: calc(13% + 32px);
+    margin: 0 -16px 1px -16px;
+}
+
+.result .mat-card-header {
+    flex-direction: column;
+    text-transform: capitalize
+}
+

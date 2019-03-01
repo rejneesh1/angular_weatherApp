@@ -9,7 +9,7 @@ import { WeatherService } from '../_services'
 export class WeatherComponent implements OnInit {
 
   city:string;//getting name from input
-  selectedValue:string ="metric"; //setting default matric:Celsius
+  selectedValue:string ="metric"; //setting default unit metric:Celsius
   unit:string 
 
   description:string;

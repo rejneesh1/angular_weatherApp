@@ -11,7 +11,7 @@ import { weatherData } from '../_modals/weatherData'
 export class WeatherService {
 
   id:string="&APPID=1e67450daf2bcc3c628e4f64ea96ddef"
-  endPoint:string=`http://api.openweathermap.org/data/2.5/weather?q=`
+  endPoint:string=`https://api.openweathermap.org/data/2.5/weather?q=`
   unit:string='&units=metric'
 
   
